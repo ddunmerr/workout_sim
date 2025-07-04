@@ -1,0 +1,8 @@
+    RewriteEngine On
+
+    # Если запрашиваемый URL не является существующим файлом
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # И если запрашиваемый URL не является существующей директорией
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Перенаправить все такие запросы на index.php
+    RewriteRule ^(.*)$ index.php [L,QSA]
